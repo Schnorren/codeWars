@@ -1,4 +1,4 @@
-package SplitStrings;
+package src.SplitStrings;
 
 public class StringSplit {
     public static String[] solution(String s) {

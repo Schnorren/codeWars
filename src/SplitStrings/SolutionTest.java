@@ -1,4 +1,4 @@
-package SplitStrings;
+package src.SplitStrings;
 
 import org.junit.jupiter.api.Test;
 
