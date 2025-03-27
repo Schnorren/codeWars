@@ -1,4 +1,4 @@
-package src.DetectPangram;
+package DetectPangram;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

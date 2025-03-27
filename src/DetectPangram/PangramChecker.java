@@ -1,4 +1,4 @@
-package src.DetectPangram;
+package DetectPangram;
 
 public class PangramChecker {
     public boolean check(String sentence){
