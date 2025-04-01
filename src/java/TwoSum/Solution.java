@@ -1,15 +1,19 @@
 package TwoSum;
 
+import java.util.HashMap;
+
 public class Solution {
     public static int[] twoSum(int[] numbers, int target) {
+        HashMap<Integer,Integer> map = new HashMap<>();
         
         for(int i = 0; i < numbers.length; i++){            //percorre o for 
-            for(int j = i+1;  j < numbers.length; j++){     //e compara com o próximo elemento
-                if(numbers[i] + numbers[j] == target){      //se for igual
-                    return new int[]{i,j};                  //retorna um array com a dupla
-                }
+            int aux = target - numbers[i];                  //verifica qt falta para atingir o target
+
+            if(map.containsKey(aux)){                       //se map já tiver a chave aux 
+                return new int[]{map.get(aux), i};          //retorna array [indice de onde ta o aux,indice atual]
             }
 
+            map.put(numbers[i], i);                         //se não correspondeu, adiciona e segue o baile
         }
 
         return null; // Do your magic!
