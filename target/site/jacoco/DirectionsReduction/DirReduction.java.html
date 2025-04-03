@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DirReduction.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Codewars Challenges</a> &gt; <a href="index.source.html" class="el_package">DirectionsReduction</a> &gt; <span class="el_source">DirReduction.java</span></div><h1>DirReduction.java</h1><pre class="source lang-java linenums">package DirectionsReduction;
+
+import java.util.Stack;
+
+<span class="nc" id="L5">public class DirReduction {</span>
+    public static String[] dirReduc(String[] arr) {
+        
+<span class="nc" id="L8">        Stack&lt;String&gt; pilha = new Stack&lt;&gt;();            //usar pilha pois eh a melhor solucao</span>
+        
+<span class="nc bnc" id="L10" title="All 2 branches missed.">        for(int i = 0; i &lt; arr.length; i++){            //percorre o array </span>
+<span class="nc bnc" id="L11" title="All 2 branches missed.">            if(pilha.empty()){                          //adicionando o primeiro valor</span>
+<span class="nc" id="L12">                pilha.push(arr[i]);</span>
+<span class="nc bnc" id="L13" title="All 2 branches missed.">            } else if(opposite(arr[i], pilha.peek())){  //comparando se o valor do topo é igual ao arr[i]</span>
+<span class="nc" id="L14">                pilha.pop();    	                    //se for, tira da pilha</span>
+            } else {                                    //se não for
+<span class="nc" id="L16">                pilha.push(arr[i]);                     //adiciona na pilha</span>
+            }
+        }
+
+<span class="nc" id="L20">        return pilha.toArray(new String[pilha.size()]); //retorna a pilha em array</span>
+    }
+
+
+        public static boolean opposite(String a, String b){ //compara se é o oposto
+<span class="nc" id="L25">            return </span>
+<span class="nc bnc" id="L26" title="All 4 branches missed.">            a.equals(&quot;SOUTH&quot;) &amp;&amp; b.equals(&quot;NORTH&quot;) ||</span>
+<span class="nc bnc" id="L27" title="All 4 branches missed.">            a.equals(&quot;NORTH&quot;) &amp;&amp; b.equals(&quot;SOUTH&quot;) ||</span>
+<span class="nc bnc" id="L28" title="All 4 branches missed.">            a.equals(&quot;EAST&quot;) &amp;&amp; b.equals(&quot;WEST&quot;) ||</span>
+<span class="nc bnc" id="L29" title="All 4 branches missed.">            a.equals(&quot;WEST&quot;) &amp;&amp; b.equals(&quot;EAST&quot;);</span>
+        }
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

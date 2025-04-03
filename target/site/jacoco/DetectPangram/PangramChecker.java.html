@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PangramChecker.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Codewars Challenges</a> &gt; <a href="index.source.html" class="el_package">DetectPangram</a> &gt; <span class="el_source">PangramChecker.java</span></div><h1>PangramChecker.java</h1><pre class="source lang-java linenums">package DetectPangram;
+
+<span class="nc" id="L3">public class PangramChecker {</span>
+    public boolean check(String sentence){
+<span class="nc" id="L5">        String abecedario = &quot;abcdefghijklmnopqrstuvwxyz&quot;; // definir abecedario para comparar</span>
+<span class="nc" id="L6">        sentence = sentence.toLowerCase().replaceAll(&quot;[^a-z]&quot;, &quot;&quot;); //tudo para letraminuscula e trocar caracter especial por &quot;&quot;</span>
+
+<span class="nc bnc" id="L8" title="All 2 branches missed.">        for(int i = 0; i &lt; abecedario.length(); i++){ // percorre o abecedario</span>
+<span class="nc" id="L9">            boolean encontrou = false; // define boolean para comparação</span>
+<span class="nc bnc" id="L10" title="All 2 branches missed.">            for(int j = 0; j &lt; sentence.length(); j++ ){ // percorre a sentence</span>
+<span class="nc bnc" id="L11" title="All 2 branches missed.">                if(abecedario.charAt(i) == sentence.charAt(j)){ //se achar a comparação for ok, atualiza boolean p true</span>
+<span class="nc" id="L12">                    encontrou = true;</span>
+<span class="nc" id="L13">                    break;</span>
+                }
+            }
+<span class="nc bnc" id="L16" title="All 2 branches missed.">            if(encontrou == false){ // se sair desse for sendo falso, quer dizer que a letra do abecedario n foi achada na sentence</span>
+<span class="nc" id="L17">                return false;</span>
+            }
+        }
+    
+<span class="nc" id="L21">      return true; // saiu do for sem cair no return false</span>
+    }
+  }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

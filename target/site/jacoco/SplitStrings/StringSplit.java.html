@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringSplit.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Codewars Challenges</a> &gt; <a href="index.source.html" class="el_package">SplitStrings</a> &gt; <span class="el_source">StringSplit.java</span></div><h1>StringSplit.java</h1><pre class="source lang-java linenums">package SplitStrings;
+
+<span class="nc" id="L3">public class StringSplit {</span>
+    public static String[] solution(String s) {
+        
+<span class="fc bfc" id="L6" title="All 2 branches covered.">        if(s.length() % 2 != 0) { //se tiver resto </span>
+<span class="fc" id="L7">            s += &quot;_&quot;; // coloca um _ no final</span>
+        }
+
+        // agora todas palavras tem lenght par
+
+<span class="fc" id="L12">        String[] resultado = new String[s.length()/2]; // cria array de string para a qt certa de pares</span>
+
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (int i = 0; i &lt; s.length(); i += 2) { // pulamos de 2 em 2</span>
+<span class="fc" id="L15">            resultado[i / 2] = s.substring(i, i + 2);  // resultado  sendo i/2 para evitar mais variaveis</span>
+        }
+        
+<span class="fc" id="L18">        return resultado; </span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
