@@ -1,47 +1,101 @@
 # 🧠 Codewars Daily Challenge
 
-> Desafios resolvidos diariamente usando Java ou outra linguagem que julgar mais eficiente para resolução do problema.
+> Desafios resolvidos diariamente usando Java ou outras linguagens mais adequadas para cada problema.
 
-Este repositório contém soluções para desafios diários do [Codewars](https://www.codewars.com/) — uma plataforma de treinamento de habilidades em programação com problemas de diferentes níveis de dificuldade.
-
-A proposta é **resolver um desafio por dia** e registrar o progresso com boas práticas de versionamento e organização de código.
+Este repositório reúne soluções para desafios do [Codewars](https://www.codewars.com/), uma plataforma para aprimorar habilidades de programação através de problemas com diferentes níveis de dificuldade.  
+A proposta é **resolver 1+ desafio por dia**, aplicando boas práticas de código, testes automatizados e versionamento.
 
 ---
 
 ## 📅 Progresso
 
-Cada diretório contém o nome do desafio resolvido naquele dia, com sua respectiva solução e, quando necessário, testes automatizados.
+Cada diretório representa um desafio resolvido, organizado de acordo com a convenção de pacotes Java (`src/main/java`) e seus respectivos testes (`src/test/java`).
 
 ---
 
-## 🛠 Tecnologias
+## 🛠 Tecnologias Utilizadas
 
 - Java 17+
-- JUnit 5 (para testes)
-- VS Code
+- JUnit 4 e 5
+- Maven
+- JaCoCo (cobertura de testes)
+- GitHub Actions (CI/CD)
+- Visual Studio Code
 
 ---
 
-## 📂 Estrutura do Repositório
+## 📊 Cobertura de Testes
 
-    .
-    ├── Day01_SplitStrings/
-    │   ├── StringSplit.java
-    │   └── SolutionTest.java
-    ├── Day02_...
-    │   └── ...
-    └── README.md
+O projeto utiliza o [JaCoCo](https://www.jacoco.org/jacoco/) para gerar relatórios de cobertura de testes.  
+Após rodar:
+
+```bash
+mvn clean verify
+```
+
+O relatório estará disponível localmente em:
+
+```
+target/site/jacoco/index.html
+```
+
+No GitHub Actions, o relatório é gerado automaticamente a cada push na branch `main` e pode ser baixado como artefato.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+.
+├── .github/
+│   └── workflows/
+│       └── maven.yml           # Workflow CI com testes e cobertura
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── CountingDuplicates/
+│   │       ├── ...
+│   └── test/
+│       └── java/
+│           ├── CountingDuplicates/
+│           ├── ...
+├── pom.xml                     # Configuração Maven (JUnit, JaCoCo, etc.)
+├── abrir-relatorio-jacoco.bat  # Script para abrir o relatório no navegador (Windows)
+└── README.md
+```
+
+---
+
+## ▶️ Como Executar Localmente
+
+1. Execute os testes e gere a cobertura:
+
+```bash
+mvn clean verify
+```
+
+2. No Windows, use o script para abrir o relatório direto no navegador:
+
+```bash
+abrir-relatorio-jacoco.bat
+```
 
 ---
 
 ## 🤝 Contribuições
 
-Esse projeto é pessoal, mas sugestões de melhorias ou abordagens alternativas são bem-vindas! Basta abrir uma *issue* ou *pull request*.
+Este projeto é pessoal, mas sugestões de melhorias ou abordagens alternativas são bem-vindas!  
+Sinta-se à vontade para abrir uma *issue* ou *pull request*.
 
 ---
 
-## 📌 Sobre o Autor
+## 👨‍💻 Sobre o Autor
 
-**Lucas** — Estudante de Engenharia de Software e entusiasta de desafios de programação.  
-🔗 [LinkedIn](https://www.linkedin.com/in/lucasramon/) | [GitHub](https://github.com/Schnorren)
+**Lucas Ramon**  
+🎓 Estudante de Engenharia de Software na PUCRS  
+💡 Apaixonado por desafios de programação e boas práticas
 
+- 🌐 [LinkedIn](https://www.linkedin.com/in/lucasramon/)
+- 💻 [GitHub](https://github.com/Schnorren)
+- ✍️ [Medium](https://medium.com/@lucas.ramon)
+```
